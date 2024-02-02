@@ -4,10 +4,6 @@
 using namespace geode::prelude;
 
 class $modify(CCSprite) {
-	static void onModify(auto & self)
-    {
-        self.setHookPriority("CCSprite::createWithSpriteFrameName", 1000);
-    }
 	static CCSprite* createWithSpriteFrameName(char const* frameName) {
         CCSprite* sprite = CCSprite::createWithSpriteFrameName(frameName);
 
