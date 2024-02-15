@@ -1,21 +1,25 @@
-#include "Geode/platform/cplatform.h"
 #include <Geode/Geode.hpp>
-#include <Geode/modify/CCSprite.hpp>
+#include <Geode/modify/PlayLayer.hpp>
 
 using namespace geode::prelude;
 
-class $modify(CCSprite) {
-	static CCSprite* createWithSpriteFrameName(char const* frameName) {
-        CCSprite* sprite = CCSprite::createWithSpriteFrameName(frameName);
-        
-        if (!Mod::get()->getSettingValue<bool>("enabled")) return sprite;
-        if (strcmp(frameName, "GJ_pauseBtn_clean_001.png") == 0) {
-            sprite->setVisible(false); // hide pause button
-            #ifdef GEODE_IS_DESKTOP
-            if (Mod::get()->getSettingValue<bool>("unclickable"))
-                sprite->setScale(0.0); // make pause button unclickable
-            #endif
-        }
-        return sprite;
+class $modify(MyPlayLayer, PlayLayer) {
+	static void onModify(auto & self)
+    {
+        self.setHookPriority("PlayLayer::init", 1000);
     }
+	bool init(GJGameLevel* p0, bool p1, bool p2) {
+		if (!PlayLayer::init(p0, p1, p2)) return false;
+		if (!Mod::get()->getSettingValue<bool>("enabled")) return true;
+		auto uiLayer = getChildByID("UILayer");
+        auto pauseButton = uiLayer->getChildByIDRecursive("pause-button");
+		if (pauseButton == nullptr) return true;
+        if (!Mod::get()->getSettingValue<bool>("unclickable")) {
+            auto pauseButtonSprite = pauseButton->getChildren()->objectAtIndex(0);
+            typeinfo_cast<CCSprite*>(pauseButtonSprite)->setScale(0);
+        } else {
+            pauseButton->setScale(0);
+        }
+		return true;
+	}
 };

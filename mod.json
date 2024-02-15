@@ -1,16 +1,23 @@
 {
-	"geode": "2.0.0-beta.12",
+	"geode": "2.0.0-beta.19",
 	"gd": {
         "mac": "2.200",
         "ios": "2.205",
         "android": "2.205",
         "win": "2.204"
     },
-	"version": "v1.1.0",
+	"version": "v1.2.0",
 	"id": "raydeeux.hidepausebutton",
 	"name": "HidePauseButton",
 	"developer": "RayDeeUx",
 	"description": "Hides the pause button, even if \"Show Cursor In-Game\" is enabled.",
+	"dependencies": [
+		{
+			"id": "geode.node-ids",
+			"version": ">=1.4.0",
+			"importance": "required"
+		}
+	],
 	"settings": {
 		"enabled": {
 			"name": "Toggle Mod",
