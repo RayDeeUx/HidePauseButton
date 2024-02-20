@@ -11,6 +11,7 @@
 	"name": "HidePauseButton",
 	"developer": "RayDeeUx",
 	"description": "Hides the pause button, even if \"Show Cursor In-Game\" is enabled.",
+	"repository": "https://github.com/RayDeeUx/HidePauseButton",
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
