@@ -1,12 +1,11 @@
 {
-	"geode": "2.0.0-beta.19",
+	"geode": "2.0.0-beta.27",
 	"gd": {
-        "mac": "2.200",
-        "ios": "2.205",
-        "android": "2.205",
-        "win": "2.204"
-    },
-	"version": "v1.2.0",
+	        "mac": "2.200",
+	        "android": "2.205",
+	        "win": "2.204"
+	    },
+	"version": "v1.2.1",
 	"id": "raydeeux.hidepausebutton",
 	"name": "HidePauseButton",
 	"developer": "RayDeeUx",
@@ -14,7 +13,7 @@
 	"dependencies": [
 		{
 			"id": "geode.node-ids",
-			"version": ">=1.4.0",
+			"version": ">=1.11.0",
 			"importance": "required"
 		}
 	],
