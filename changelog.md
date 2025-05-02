@@ -1,4 +1,5 @@
 # HidePauseButton Changelog
+## v1.4.1
 ## v1.4.0
 - Port to 2.2074.
 ## v1.3.0
