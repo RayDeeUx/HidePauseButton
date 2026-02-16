@@ -2,11 +2,11 @@
 	"geode": "5.0.0-beta.1",
 	"gd": {
 		"mac": "2.2081",
-		"android": "2.2081",
 		"win": "2.2081",
-		"ios": "2.2081"
+		"ios": "2.2081",
+		"android": "2.2081"
 	},
-	"version": "v1.4.2",
+	"version": "v1.4.3",
 	"id": "raydeeux.hidepausebutton",
 	"name": "HidePauseButton",
 	"developer": "RayDeeUx",
