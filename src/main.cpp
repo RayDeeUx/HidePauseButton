@@ -6,10 +6,8 @@ class $modify(MyPlayLayer, PlayLayer) {
 	void setupHasCompleted() {
 		PlayLayer::setupHasCompleted();
 		if (!Mod::get()->getSettingValue<bool>("enabled") || !m_uiLayer || !m_uiLayer->m_pauseBtn) return;
-		if (!Mod::get()->getSettingValue<bool>("unclickable")) {
-			static_cast<CCSprite*>(m_uiLayer->m_pauseBtn->getChildren()->objectAtIndex(0))->setScale(0);
-		} else {
-			m_uiLayer->m_pauseBtn->setScale(0);
-		}
+		CCNode* targetNode = Mod::get()->getSettingValue<bool>("unclickable") ? m_uiLayer->m_pauseBtn->getChildByType<CCSprite*>(0) : m_uiLayer->m_pauseBtn;
+		if (!targetNode) return;
+		targetNode->setScale(0);
 	}
 };
