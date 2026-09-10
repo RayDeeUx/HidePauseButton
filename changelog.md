@@ -1,5 +1,5 @@
 # HidePauseButton Changelog
-## v1.4.4
+## v1.4.4 and v1.4.5
 - Refactor a few things.
 ## v1.4.2 and v1.4.3
 - Port to 2.2081.
