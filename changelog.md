@@ -1,4 +1,6 @@
 # HidePauseButton Changelog
+## v1.4.5
+- 2.2091 as a game update was a net negative.
 ## v1.4.4
 - Refactor a few things.
 ## v1.4.2 and v1.4.3
